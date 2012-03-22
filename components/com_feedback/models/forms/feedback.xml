@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+        <fieldset>
+                <field
+                        name="factory"
+                        type="text"
+                        label="Организация"
+                        size="20"
+                        class="inputbox"
+                        required="true"
+                        filter="string"
+                        regex="/w+"
+                />
+                <field
+                        name="name"
+                        type="text"
+                        label="Контактное лицо"
+                        size="20"
+                        class="inputbox"
+                        required="true"
+                        filter="string"
+                />
+                <field
+                        name="email"
+                        type="text"
+                        label="E-mail"
+                        size="20"
+                        class="inputbox"
+                        required="true"
+                        filter="string"
+                        validate="email"
+                />
+                <field
+                        name="phone"
+                        type="text"
+                        label="Телефон"
+                        size="20"
+                        class="inputbox"
+                        required="true"
+                        filter="string"
+                />
+                <field
+                        name="message"
+                        type="textarea"
+                        label="Сообщение"
+                        cols="30"
+                        rows="5"
+                        class="inputbox"
+                        required="true"
+                        filter="string"
+                />
+        </fieldset>
+</form>

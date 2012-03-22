@@ -1,0 +1,4 @@
+Date	Time	Cause	IP	Name	User agent	Request method	Request URI	Comment
+2012-03-22	22:53:01	Page not found (404)	127.0.0.1	XoveR-Notebook	Mozilla/5.0 (Windows NT 6.1; WOW64; rv:10.0.2) Gecko/20100101 Firefox/10.0.2	GET	/index.php/ru/	http://berezinogkh/index.php/%D0%93%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B8/schedule-of-garbage-collection-with-g-berezino.html
+2012-03-22	22:56:00	Page not found (404)	127.0.0.1	XoveR-Notebook	Mozilla/5.0 (Windows NT 6.1; WOW64; rv:10.0.2) Gecko/20100101 Firefox/10.0.2	GET	/ru/	http://berezinogkh/%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B8/schedule-of-personal-reception-of-citizens
+2012-03-22	22:59:08	Page not found (404)	127.0.0.1	XoveR-Notebook	Mozilla/5.0 (Windows NT 6.1; WOW64; rv:10.0.2) Gecko/20100101 Firefox/10.0.2	GET	/ru/

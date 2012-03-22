@@ -1,5 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config>
+        <fieldset
+		name="mail_template"
+		label="Почтовые шаблоны"
+		description="Шаблоны писем, которые приходят к администратору и к пользователю на почту"
+		>
+
+		<field  name="admin_mail_template"
+			type="textarea"
+			label="Шаблон админа"
+                        rows="4"
+			cols="80"
+                        default="Пользователь с именем %name% с организации %factory% прислал сообщение:
+%message%
+Он указал следующий контактный телефон: %phone%. 
+Его e-mail: %e-mail%"
+			>
+		</field>
+                <field  name="user_mail_template"
+			type="textarea"
+			label="Шаблон пользователя"
+                        rows="14"
+			cols="80"
+                        default="Здравствуйте!
+
+Вы оставили на сайте %baseUrl% следующие данные:
+
+Организации:     %factory%;
+Контактное лицо: %name%;
+E-mail:          %e-mail%;
+Телефон:         %phone%;
+Cообщение:
+%message%  
+
+Спасибо за Ваше внимание к нашей продукции.
+
+Администрация Алелия."
+			>
+		</field>
+                <field  
+                type="spacer" >
+                </field>
+                
+                <field name="desc_text" 
+                filter="safehtml" 
+                class="inputbox" 
+                type="editor" 
+                width="585" 
+                height="200" 
+                label="Текст над формой" 
+                default="">
+                    
+                </field>
+	</fieldset>
 	<fieldset
 		name="permissions"
 		label="JCONFIG_PERMISSIONS_LABEL"

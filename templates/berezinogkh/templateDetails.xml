@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
+<extension version="2.5" type="template" client="site">
+	<name>berezinogkh</name>
+	<creationDate>20 Martch 2012</creationDate>
+	<author>Slava Poddubsky</author>
+	<authorEmail>cheslav.p@tut.byvi</authorEmail>
+	<copyright>Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>2.5.0</version>
+	<description>Шаблон для сайта Березинского ЖКХ</description>
+
+	<files>
+		<folder>css</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>javascript</folder>
+		<folder>fonts</folder>
+		<folder>language</folder>
+		<filename>index.html</filename>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>favicon.ico</filename>
+		<filename>component.php</filename>
+	</files>
+
+	<positions>
+		<position>top-menu</position>
+		<position>top-search</position>
+                <position>top-auth</position>
+                <position>top-breadcrambs</position>
+                <position>top-article</position>
+                <position>left-menu</position>
+                <position>left-links</position>
+                <position>left-docs</position>
+                <position>right-weather</position>
+                <position>right-pull</position>
+                <position>bottom-contacts</position>
+                <position>search-form</position>                
+	</positions>
+</extension>

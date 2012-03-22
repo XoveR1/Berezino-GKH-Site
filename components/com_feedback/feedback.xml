@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<!-- $Id: mailto.xml 21507 2011-06-10 07:37:12Z infograf768 $ -->
+<extension type="component" version="1.7" method="upgrade">
+	<name>Форма обратной связи</name>
+	<creationDate>03 October 2011</creationDate>
+	<author>XoveR</author>
+	<authorEmail>vicheslav.p@tut.by</authorEmail>
+	<copyright>Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>1.7.0</version>
+</extension>
