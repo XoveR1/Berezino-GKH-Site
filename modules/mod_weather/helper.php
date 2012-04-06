@@ -34,6 +34,8 @@ defined('_JEXEC') or die('Restricted access');
  * @class       ModWeatherHelper
  */
 class ModWeatherHelper {
+    
+    const DAY_PART_HOUR = 6;
 
     protected $weatherUrl = "http://www.meteonova.by/xml/%d.xml";
     protected $weatherXml = '';
@@ -59,25 +61,87 @@ class ModWeatherHelper {
         }
         return $this->weatherData;
     }
+    
+    protected function getDayPart(){
+        $currectHour = date('h');
+        if($currectHour > 21){
+            return 21;
+        } elseif($currectHour > 15){
+            return 15;
+        } elseif($currectHour > 9){
+            return 9;
+        } elseif($currectHour > 3){
+            return 3;
+        } else {
+            return 21;
+        }
+    }
+    
+    protected function getCacheKey($dayPart){
+        return md5('mod_weather_' . date('d_m_Y') . 
+                '_hour_' . $dayPart);
+    }
+    
+    protected function getCache($id){
+        if(!$this->params->get('cache_href')){
+            return false;
+        }
+        $file = JPATH_CACHE . DS . 'mod_weather' . DS . $id;
+        if(file_exists($file)){
+            $data = JFile::read($file);
+            return json_decode($data);
+        } else {
+            return false;
+        }
+    }
+    
+    protected function setCache($id, $data){
+        if(!$this->params->get('cache_href')){
+            return;
+        }
+        $file = JPATH_CACHE . DS . 'mod_weather' . DS . $id;
+        $buffer = json_encode($data);
+        JFile::write($file, $buffer);
+    }
+    
+    protected function cleanCache(){
+        if(!$this->params->get('cache_href')){
+            return;
+        }
+        jimport('joomla.filesystem.folder');
+        $folder = JPATH_CACHE . DS . 'mod_weather';
+        JFolder::delete($folder);
+    }
 
     protected function loadData() {
         if (!function_exists('simplexml_load_string')) {
             $this->errorCode = 'SIMPLE_XML_NOT_INSTALLED';
             return false;
         }
-        $cityId = (int) $this->params->get('city_id');
-        if ($cityId == 0) {
-            $this->errorCode = 'NO_CITY_ID';
-            return false;
+        $cacheKey = $this->getCacheKey($this->getDayPart());
+        if(!$weatherData = $this->getCache($cacheKey)){
+            $this->cleanCache();
+            $cityId = (int) $this->params->get('city_id');
+            if ($cityId == 0) {
+                $this->errorCode = 'NO_CITY_ID';
+                return false;
+            }
+            $rederedUrl = sprintf($this->weatherUrl, $cityId);
+            $xmlCode = file_get_contents($rederedUrl);
+            $this->weatherXml = simplexml_load_string($xmlCode);
+            $weatherData = $this->parseWeather();
+            $this->setCache($cacheKey, $weatherData);
         }
-        $rederedUrl = sprintf($this->weatherUrl, $cityId);
-        $xmlCode = file_get_contents($rederedUrl);
-        $this->weatherXml = simplexml_load_string($xmlCode);
-        $this->parseWeather();
+        $this->weatherData = $weatherData;
         return true;
     }
     
+    protected function getWeatherInWord($cloudiness, $precipitation){
+        //if($cloudiness == 1)
+    }
+    
     protected function parseWeather(){
+        $weatherData = array();
         foreach($this->weatherXml->REPORT->TOWN->FORECAST as $forecast){
             $weatherItem = new stdClass();
             $hour = (string)$forecast['hour'];
@@ -107,10 +171,10 @@ class ModWeatherHelper {
                     (string)$forecast->PHENOMENA['cloudiness'];
             $weatherItem->phenomena->precipitation = 
                     (string)$forecast->PHENOMENA['precipitation'];
-            $this->weatherData[] = $weatherItem;
+            $weatherData[] = $weatherItem;
         }
+        return $weatherData;
     }
-
 }
 
 ?>

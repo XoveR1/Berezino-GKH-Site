@@ -21,17 +21,29 @@
 defined('_JEXEC') or die('Restricted access');
 ?>
 <div class="module <?= $params->get('moduleclass_sfx') ?>">
-    <?php if($module->showtitle): ?>
+    <?php if ($module->showtitle): ?>
         <h3><?= $module->title ?></h3>
     <?php endif; ?>
 
     <div class="content">
-        <?php foreach($weatherData as $weatherItem) : ?>
-            <p>
-                <?= JText::_('AG_CG_' . $weatherItem->dayperiod) ?>
-                <?= date("d", $weatherItem->datetime).JText::_('AG_CG_DATE_SUFFIX') ?>
-                
-            </p>
-        <?php endforeach; ?>
+        <table class="weather-table">
+            <?php foreach ($weatherData as $weatherItem) : ?>
+                <tr>
+                    <td>
+                        <?= JText::_('AG_CG_' . $weatherItem->dayperiod) ?>
+                        <?= date("d", $weatherItem->datetime) . JText::_('AG_CG_DATE_SUFFIX') ?>
+                    </td>
+                    <td>
+                        <?= $weatherItem->temperature->min ?> 
+                        <span>&deg;C |</span>
+                        <?= $weatherItem->temperature->max ?>
+                        <span>&deg;C</span>
+                    </td>
+                    <td>
+                        <i class="w-icon w-icon-clear"></i>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
     </div>
 </div>

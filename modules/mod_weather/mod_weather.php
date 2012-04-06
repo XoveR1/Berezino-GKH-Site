@@ -23,6 +23,9 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
  
 // include the helper file
 require_once(dirname(__FILE__).DS.'helper.php');
+
+$document = JFactory::getDocument();
+$document->addStylesheet(JURI::base(true) . '/modules/mod_weather/assets/css/style.css');	
  
 $weather = new ModWeatherHelper;
 $weather->setParams($params);
