@@ -137,7 +137,16 @@ class ModWeatherHelper {
     }
     
     protected function getWeatherInWord($cloudiness, $precipitation){
-        //if($cloudiness == 1)
+        if($cloudiness <= 3 && $precipitation == 4){
+            //precipitation = 4 - little rain
+            return 'l-rain';
+        } elseif($cloudiness <= 3 && $precipitation == 10){
+            // precipitation = 10 - no rain
+            return 'l-cloudly';
+        } elseif($cloudiness <= 3 && $precipitation == 6){
+            // precipitation = 6 - precipitation
+            return 'precipitation';
+        }
     }
     
     protected function parseWeather(){
@@ -150,27 +159,39 @@ class ModWeatherHelper {
             $year = (string)$forecast['year'];
             $weatherItem->datetime = mktime($hour, 0, 0, $month, $day, $year);
             switch($hour){
-                case '3': $weatherItem->dayperiod = 'NIGHT';                    
+                case '3': $weatherItem->dayperiod = 'NIGHT'; 
+                    $weatherItem->daypart = 'night';
                     break;
-                case '9': $weatherItem->dayperiod = 'MORNING';                    
+                case '9': $weatherItem->dayperiod = 'MORNING';    
+                    $weatherItem->daypart = 'day';
                     break;
-                case '15': $weatherItem->dayperiod = 'AFTERNOON';                    
+                case '15': $weatherItem->dayperiod = 'AFTERNOON';
+                    $weatherItem->daypart = 'day';
                     break;
-                case '21': $weatherItem->dayperiod = 'EVENING';                    
+                case '21': $weatherItem->dayperiod = 'EVENING';   
+                    $weatherItem->daypart = 'night';
                     break;
             }
             
             $weatherItem->temperature = new stdClass();
             $weatherItem->temperature->min = 
                     (string)$forecast->TEMPERATURE['min'];
+            if($weatherItem->temperature->min > 0){
+                $weatherItem->temperature->min = '+' . $weatherItem->temperature->min;
+            }
             $weatherItem->temperature->max = 
                     (string)$forecast->TEMPERATURE['max'];
+            if($weatherItem->temperature->max > 0){
+                $weatherItem->temperature->max = '+' . $weatherItem->temperature->max;
+            }
             
             $weatherItem->phenomena = new stdClass();
             $weatherItem->phenomena->cloudiness = 
                     (string)$forecast->PHENOMENA['cloudiness'];
             $weatherItem->phenomena->precipitation = 
                     (string)$forecast->PHENOMENA['precipitation'];
+            $weatherItem->weatherword = $this->getWeatherInWord($weatherItem->phenomena->cloudiness,
+                    $weatherItem->phenomena->precipitation);
             $weatherData[] = $weatherItem;
         }
         return $weatherData;

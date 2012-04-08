@@ -30,20 +30,25 @@ defined('_JEXEC') or die('Restricted access');
             <?php foreach ($weatherData as $weatherItem) : ?>
                 <tr>
                     <td>
-                        <?= JText::_('AG_CG_' . $weatherItem->dayperiod) ?>
-                        <?= date("d", $weatherItem->datetime) . JText::_('AG_CG_DATE_SUFFIX') ?>
+                        <h5>
+                            <span class="<?= $weatherItem->daypart ?>-label">
+                                <?= JText::_('AG_CG_' . $weatherItem->dayperiod) ?>
+                                <?= date("j", $weatherItem->datetime) . JText::_('AG_CG_DATE_SUFFIX') ?> :
+                            </span>
+                            <strong>
+                                <?= $weatherItem->temperature->min ?> 
+                                <span>&deg;C |</span>
+                                <?= $weatherItem->temperature->max ?>
+                                <span>&deg;C</span>
+                            </strong>
+                        </h5>
                     </td>
                     <td>
-                        <?= $weatherItem->temperature->min ?> 
-                        <span>&deg;C |</span>
-                        <?= $weatherItem->temperature->max ?>
-                        <span>&deg;C</span>
-                    </td>
-                    <td>
-                        <i class="w-icon w-icon-clear"></i>
+                        <i class="w-icon w-icon-<?= $weatherItem->weatherword ?>"></i>
                     </td>
                 </tr>
             <?php endforeach; ?>
         </table>
+        <a class="copyright" href="http://www.meteonova.by" target="_blank"><?= JText::_('AG_CG_COPYRIGHT') ?></a>
     </div>
 </div>

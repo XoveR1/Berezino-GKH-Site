@@ -1,7 +1,7 @@
 <?php
 // config.sef.php : configuration file for sh404SEF for Joomla 1.5.x
 // 3.4.5.1255
-// saved at: 2012-03-24 00:47:54
+// saved at: 2012-04-08 15:11:19
 // by: admin (id: 42 )
 // domain: http://berezinogkh
 
@@ -19,7 +19,7 @@ $friendlytrim = '-| ';
 $LowerCase = '1';
 $ShowSection = false;
 $ShowCat = true;
-$UseAlias = '0';
+$UseAlias = '1';
 $page404 = 0;
 $predefined = array();
 $skip = array();
@@ -30,7 +30,7 @@ $shUseURLCache = '1';
 $shMaxURLInCache = '10000';
 $shTranslateURL = '0';
 $shInsertLanguageCode = '0';
-$notTranslateURLList = array();
+$notTranslateURLList = array("phocagallery");
 $notInsertIsoCodeList = array("newsfeeds","phocagallery");
 $shInsertGlobalItemidIfNone = '0';
 $shInsertTitleIfNoItemid = '0';
@@ -50,7 +50,7 @@ $shInsertCategoryId = '0';
 $shInsertNumericalId = '0';
 $shInsertNumericalIdCatList = array("");
 $shRedirectNonSefToSef = '1';
-$shRedirectJoomlaSefToSef = '0';
+$shRedirectJoomlaSefToSef = false;
 $shConfig_live_secure_site = '';
 $shActivateIJoomlaMagInContent = true;
 $shInsertIJoomlaMagIssueId = false;
@@ -117,7 +117,7 @@ $shMultipagesTitle = '1';
 $encode_page_suffix = '';
 $encode_space_char = '-';
 $encode_lowercase = '1';
-$encode_strip_chars = '.,|~|!|@|%|^|(|)|<|>|:|;|{|}|[|]|&|`|„|‹|’|‘|“|”|•|›|«|´|»|°';
+$encode_strip_chars = '.,|~|!|@|%|^|(|)|<|>|:|;|{|}|[|]|&|`|„|‹|’|‘|“|”|•|›|«|´|»|°,';
 $spec_chars_d = 'А,Б,В,Г,Д,Е,Ё,Ж,З,И,Й,К,Л,М,Н,О,П,Р,С,Т,У,Ф,Х,Ц,Ч,Ш,Щ,Ъ,Ы,Ь,Э,Ю,Я,а,б,в,г,д,е,ё,ж,з,и,й,к,л,м,н,о,п,р,с,т,у,ф,х,ц,ч,ш,щ,ъ,ы,ь,э,ю,я,';
 $spec_chars = 'A,B,V,G,D,E,E,J,Z,I,ie,K,L,M,N,O,P,R,S,T,U,F,X,C,CH,SH,SH,`,I,`,E,YU,YA,a,b,v,g,d,e,e,j,z,i,ie,k,l,m,n,o,p,r,s,t,u,f,x,c,ch,sh,sh,`,i,`,e,yu,ya,';
 $content_page_format = '%s-%d';
@@ -141,7 +141,7 @@ $shSecAntiFloodCount = 10;
 $shLangTranslateList = array("en-GB"=>"2");
 $shLangInsertCodeList = array("en-GB"=>"2");
 $defaultComponentStringList = array("banners"=>"","contact"=>"","content"=>"","feedback"=>"","finder"=>"","login"=>"","mailto"=>"","newsfeeds"=>"","phocagallery"=>"","search"=>"","weblinks"=>"","wrapper"=>"");
-$pageTexts = array("en-GB"=>"Page-%s","ru-RU"=>"");
+$pageTexts = array("en-GB"=>"");
 $shAdminInterfaceType = 1;
 $shInsertNoFollowPDFPrint = true;
 $shInsertReadMorePageTitle = false;
@@ -176,7 +176,7 @@ $shInsertOutboundLinksImage = '0';
 $shImageForOutboundLinks = 'external-black.png';
 $useCatAlias = '0';
 $useSecAlias = false;
-$useMenuAlias = '0';
+$useMenuAlias = '1';
 $alwaysAppendItemsPerPage = '0';
 $redirectToCorrectCaseUrl = '1';
 $jclInsertEventId = false;

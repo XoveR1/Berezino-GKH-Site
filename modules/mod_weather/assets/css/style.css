@@ -12,5 +12,5 @@
 .w-icon-storm{background-position: -320px -79px}
 
 .weather-table{width: 100%}
-.weather-table td{}
+.weather-table td{vertical-align: middle}
 

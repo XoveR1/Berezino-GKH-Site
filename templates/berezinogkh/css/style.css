@@ -79,13 +79,13 @@ h4{display: inline; background: none; padding: 0; font-style: italic; font-weigh
 .module{font-size: 14px; margin-bottom: 10px;}
 #sideLeft .module{font-style: italic}
 .module h3{background: url(../images/module-gd.png) 0 0 repeat-x; font-style: normal; margin-bottom: 10px; padding: 9px 0 9px 15px; font-weight: normal; border-radius: 3px; color: #fff; font-size: 16px;  text-shadow: 1px 1px 0 #333; -webkit-text-shadow: 1px 1px 0 #333; -moz-text-shadow: 1px 1px 0 #333}
-.module menu li{ padding: 3px 0 3px 0; list-style: none }
-.module menu > li{border-bottom: 1px dashed #c9c5b3;}
-.module menu li.last{border: none}
-.module menu ul li{padding-left: 20px}
-.module menu a{color: #7a4242; display: inline-block; background: url(../images/menu-arrows.png) 0 -87px no-repeat; padding: 0 0 0 20px}
-.module menu a:hover, .module menu a.active{color: #4b5e65; text-decoration: none; background-position: 0 6px}
-.links-list li{padding: 3px 0 3px 5px}
+.module li.last, .module li:last-child{border: none;}
+.main-nav li{ padding: 3px 0 3px 0; list-style: none }
+.main-nav menu > li{border-bottom: 1px dashed #c9c5b3;}
+.main-nav ul li{padding-left: 20px}
+.main-nav a{color: #7a4242; display: inline-block; background: url(../images/menu-arrows.png) 0 -87px no-repeat; padding: 0 0 0 20px}
+.main-nav a:hover, .module menu a.active{color: #4b5e65; text-decoration: none; background-position: 0 6px}
+.links-list li{padding: 3px 0 3px 5px; list-style: none}
 .links-list a{color: #187496;}
 .links-list a:hover{color: #22a5d5; text-decoration: none}
 .files-list li{padding: 5px 25px 7px 5px; border-bottom: 1px dashed #c9c5b3; position: relative}
@@ -93,12 +93,16 @@ h4{display: inline; background: none; padding: 0; font-style: italic; font-weigh
 .files-list a{color: #7a4343;}
 .files-list a:hover{color: #4b5e65; text-decoration: none}
 .files-list .icon{position: absolute; top: 4px; right: 6px}
-.weather h5{background: #fff; border-radius: 5px; padding: 3px 0 3px 10px; font-size: 12px; font-weight: normal}
+.weather h5{background: #fff; border-radius: 5px; margin-right: 5px; padding: 3px 5px; font-size: 12px; font-weight: normal}
 .weather p{clear: both; height: 20px; padding: 5px 0; margin: 0}
+.weather .weather-table tr{border-bottom: 1px dashed #C9C5B3}
+.weather .day-label{color: #7A4242}
+.weather .night-label{color: #187496}
+.weather .copyright{font-size: 12px}
 
 .news-block{margin: 0 0 20px 0;}
 .news-block article{padding: 0 0 0 10px}
-.news-block h3{color: #187496; margin-bottom: 6px;}
+.news-block h2{color: #187496; margin-bottom: 6px; background: none; padding: 0; font-size: 16px}
 .news-block time{color: #8c8c8c; font-size: 12px; display: block; margin-bottom: 6px}
 .news-block p{display: inline}
 .news-block a{color: #187496}

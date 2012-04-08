@@ -4,7 +4,7 @@ class JConfig {
 	public $offline_message = 'Сайт закрыт на техническое обслуживание.<br /> Пожалуйста, зайдите позже.';
 	public $display_offline_message = '1';
 	public $offline_image = '';
-	public $sitename = 'Сайт Березинского ЖКХ';
+	public $sitename = 'Березинское ЖКХ';
 	public $editor = 'tinymce';
 	public $captcha = '0';
 	public $list_limit = '20';

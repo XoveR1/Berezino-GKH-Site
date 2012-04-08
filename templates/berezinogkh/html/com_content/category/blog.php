@@ -10,7 +10,13 @@ defined('_JEXEC') or die;
 
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 ?>
-<?php $leadingcount = 0; ?>
+<?php if ($this->params->get('show_page_heading', 1)) : ?>
+    <h2>
+        <?php echo $this->escape($this->params->get('page_heading')); ?>
+    </h2>
+<?php endif; ?>
+<div class="<?php echo $this->pageclass_sfx; ?>">
+    <?php $leadingcount = 0; ?>
     <?php if (!empty($this->lead_items)) : ?>
         <?php foreach ($this->lead_items as &$item) : ?>
             <?php
@@ -36,13 +42,14 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 
             if ($rowcount == 1) :
                 ?>
-                <?php endif; ?>
-                   <?php
-                    $this->item = &$item;
-                    echo $this->loadTemplate('item');
-                    ?>
-                <?php $counter++; ?>
-                <?php if (($rowcount == $this->columns) or ($counter == $introcount)): ?>
+            <?php endif; ?>
+            <?php
+            $this->item = &$item;
+            echo $this->loadTemplate('item');
+            ?>
+            <?php $counter++; ?>
+            <?php if (($rowcount == $this->columns) or ($counter == $introcount)): ?>
             <?php endif; ?>
         <?php endforeach; ?>
     <?php endif; ?>
+</div>

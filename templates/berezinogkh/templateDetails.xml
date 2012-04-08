@@ -30,12 +30,10 @@
                 <position>top-auth</position>
                 <position>top-breadcrambs</position>
                 <position>top-article</position>
-                <position>left-menu</position>
-                <position>left-links</position>
-                <position>left-docs</position>
-                <position>right-weather</position>
-                <position>right-pull</position>
+                <position>left-side</position>
+                <position>right-side</position>
                 <position>bottom-contacts</position>
-                <position>search-form</position>                
+                <position>search-form</position>  
+                <position>above-content</position>
 	</positions>
 </extension>

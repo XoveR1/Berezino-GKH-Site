@@ -1,13 +1,8 @@
 <?php
 // No direct access.
 defined('_JEXEC') or die;
-
-
 JHtml::_('behavior.framework', true);
-
-$t1 = $this->countModules('right-weather');
-
-$showRightColumn = ($this->countModules('right-weather') or $this->countModules('right-pull'));
+$showRightColumn = ($this->countModules('right-side'));
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
@@ -21,7 +16,7 @@ $showRightColumn = ($this->countModules('right-weather') or $this->countModules(
     <body>
         <div id="wrapper">
             <header id="header">
-                <h1 class="logo"><a href="/">Березинский ЖКХ</a></h1>
+                <h1 class="logo"><a href="/"><?= JFactory::getApplication()->getCfg('sitename') ?></a></h1>
                 <div class="top-controls">
                     <menu>
                         <jdoc:include type="modules" name="top-menu" />
@@ -36,54 +31,16 @@ $showRightColumn = ($this->countModules('right-weather') or $this->countModules(
                 <div id="container">
                     <div id="content">
                         <jdoc:include type="message" />
+                        <jdoc:include type="modules" name="above-content" />
                         <jdoc:include type="component" />
                     </div><!-- #content-->
                 </div><!-- #container-->
                 <aside id="sideLeft">
-                    <div class="module">
-                        <h3>Навигация по сайту</h3>
-                        <div class="content">
-                            <menu>
-                                <jdoc:include type="modules" name="left-menu" />
-                            </menu>
-                        </div>
-                    </div>
-                    <div class="module links-list">
-                        <h3>Интернет-ресурсы</h3>
-                        <div class="content">
-                            <ul>
-                                <jdoc:include type="modules" name="left-links" />
-                            </ul>
-                        </div>
-                    </div>
+                    <jdoc:include type="modules" name="left-side" />
                 </aside><!-- #sideLeft -->
                 <?php if($showRightColumn) : ?>
                 <aside id="sideRight">
-                    <jdoc:include type="modules" name="right-weather" />
-                    <div class="module pull">
-                        <h3>Голосование</h3>
-                        <div class="content">
-                            <p class="question">Как Вы оцениваете качество работы коммунальных служб города?</p>
-                            <form>
-                                <p>
-                                    <input type="radio" name="pull" />
-                                    <label>Хорошо</label>
-                                </p>
-                                <p>
-                                    <input type="radio" name="pull" />
-                                    <label>Плохо</label>
-                                </p>
-                                <p>
-                                    <button class="button button-green">
-                                        <span>Проголосовать</span>
-                                    </button>
-                                    <button class="button button-green">
-                                        <span>Итоги</span>
-                                    </button>
-                                </p>
-                            </form>
-                        </div>
-                    </div>
+                    <jdoc:include type="modules" name="right-side" />
                 </aside><!-- #sideRight -->
                 <?php endif; ?>
             </section><!-- #middle-->
@@ -93,10 +50,7 @@ $showRightColumn = ($this->countModules('right-weather') or $this->countModules(
                 <div class="contacts-widget">
                     <jdoc:include type="modules" name="bottom-contacts" />
                 </div>
-                <div class="copyright">Авторское право © <?= date("Y") ?> Березинский ЖКХ</div>
-                <div class="counter">
-                    <img src="content/counter.png" />
-                </div>
+                <div class="copyright"><?= JFactory::getApplication()->getCfg('sitename') ?> © <?= date("Y") ?></div>
             </div>
         </footer><!-- #footer -->
         <script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/jquery-1.6.1.min.js"></script>
