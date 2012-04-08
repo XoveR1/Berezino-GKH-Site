@@ -1,8 +1,8 @@
 <?php
 // config.sef.php : configuration file for sh404SEF for Joomla 1.5.x
 // 3.4.5.1255
-// saved at: 2012-03-24 00:47:54
-// by: admin (id: 42 )
+// saved at: 2012-03-30 16:08:05
+// by: XoveR (id: 42 )
 // domain: http://berezinogkh
 
 if (!defined('_JEXEC')) die('Direct Access to this location is not allowed.');
@@ -11,11 +11,11 @@ $version = '3.4.5.1255';
 $Enabled = '1';
 $replacement = '-';
 $pagerep = '-';
-$stripthese = '.,|~|!|@|%|^|(|)|<|>|:|;|{|}|[|]|&|`|„|‹|’|‘|“|”|•|›|«|´|»|°';
+$stripthese = '.,|~|!|@|%|^|(|)|<|>|:|;|{|}|[|]|&|`|„|‹|’|‘|“|”|•|›|«|´|»|°,';
 $shReplacements = 'А|A, Б|B, В|V, Г|G, Д|D, Е|E, Ё|E, Ж|J, З|Z, И|I, Й|ie, К|K, Л|L, М|M, Н|N, О|O, П|P, Р|R, С|S, Т|T, У|U, Ф|F, Х|X, Ц|C, Ч|CH, Ш|SH, Щ|SH, Ъ|`, Ы|I, Ь|`, Э|E, Ю|YU, Я|YA, а|a, б|b, в|v, г|g, д|d, е|e, ё|e, ж|j, з|z, и|i, й|ie, к|k, л|l, м|m, н|n, о|o, п|p, р|r, с|s, т|t, у|u, ф|f, х|x, ц|c, ч|ch, ш|sh, щ|sh, ъ|`, ы|i, ь|`, э|e, ю|yu, я|ya';
 $suffix = '';
 $addFile = '';
-$friendlytrim = '-|.';
+$friendlytrim = '-| ';
 $LowerCase = '1';
 $ShowSection = false;
 $ShowCat = true;
@@ -26,11 +26,11 @@ $skip = array();
 $nocache = array();
 $shDoNotOverrideOwnSef = array("feedback","newsfeeds","phocagallery");
 $shLog404Errors = '1';
-$shUseURLCache = '0';
+$shUseURLCache = '1';
 $shMaxURLInCache = '10000';
 $shTranslateURL = '0';
 $shInsertLanguageCode = '0';
-$notTranslateURLList = array();
+$notTranslateURLList = array("phocagallery");
 $notInsertIsoCodeList = array("newsfeeds","phocagallery");
 $shInsertGlobalItemidIfNone = '0';
 $shInsertTitleIfNoItemid = '0';
@@ -87,9 +87,9 @@ $shPutH1Tags = false;
 $shMetaManagementActivated = '1';
 $shInsertContentTableName = '1';
 $shContentTableName = 'Table';
-$shAutoRedirectWww = '0';
+$shAutoRedirectWww = '1';
 $shVmInsertProductName = '1';
-$shForcedHomePage = '';
+$shForcedHomePage = 'http://berezinogkh/';
 $shInsertContentBlogName = '0';
 $shContentBlogName = '';
 $shInsertMTreeName = '0';
@@ -138,10 +138,10 @@ $shSecActivateAntiFlood = true;
 $shSecAntiFloodOnlyOnPOST = false;
 $shSecAntiFloodPeriod = 10;
 $shSecAntiFloodCount = 10;
-$shLangTranslateList = array("en-GB"=>"0");
-$shLangInsertCodeList = array("en-GB"=>"0");
+$shLangTranslateList = array("en-GB"=>"2");
+$shLangInsertCodeList = array("en-GB"=>"2");
 $defaultComponentStringList = array("banners"=>"","contact"=>"","content"=>"","feedback"=>"","finder"=>"","login"=>"","mailto"=>"","newsfeeds"=>"","phocagallery"=>"","search"=>"","weblinks"=>"","wrapper"=>"");
-$pageTexts = array("en-GB"=>"Page-%s","ru-RU"=>"");
+$pageTexts = array("en-GB"=>"","ru-RU"=>"");
 $shAdminInterfaceType = 1;
 $shInsertNoFollowPDFPrint = true;
 $shInsertReadMorePageTitle = false;
@@ -216,8 +216,8 @@ $shFbShortUrlToProfile = '1';
 $shPageNotFoundItemid = 0;
 $autoCheckNewVersion = '1';
 $error404SubTemplate = 'index';
-$enablePageId = '1';
-$compEnablePageId = array("contact","content","newsfeeds","weblinks");
+$enablePageId = '0';
+$compEnablePageId = array("contact","newsfeeds","weblinks");
 $analyticsEnabled = false;
 $analyticsReportsEnabled = true;
 $analyticsType = 'ga';
@@ -236,7 +236,7 @@ $analyticsDashboardDataType = 'pageviews';
 $slowServer = '0';
 $useJoomsefRouter = array();
 $useAcesefRouter = array();
-$insertShortlinkTag = '1';
+$insertShortlinkTag = '0';
 $insertRevCanTag = '0';
 $insertAltShorterTag = '0';
 $canReadRemoteConfig = '0';

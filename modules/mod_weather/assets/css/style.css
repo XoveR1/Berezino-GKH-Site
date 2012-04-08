@@ -1,0 +1,16 @@
+.w-icon{height: 50px; width: 58px; display: inline-block; background: url(../images/icons.png) 0 0 no-repeat;}
+.w-icon-clear{background-position: 4px -17px}
+.w-icon-l-cloudly{background-position: -69px -17px}
+.w-icon-m-cloudly{background-position: -213px -13px}
+.w-icon-h-cloudly{background-position: -140px -13px}
+.w-icon-precipitation{background-position: -284px -13px}
+.w-icon-fog{background-position: -353px -13px}
+.w-icon-l-rain{background-position: -177px -87px}
+.w-icon-m-rain{background-position: -33px -87px}
+.w-icon-h-rain{background-position: -105px -87px}
+.w-icon-snow{background-position: -249px -87px}
+.w-icon-storm{background-position: -320px -79px}
+
+.weather-table{width: 100%}
+.weather-table td{}
+

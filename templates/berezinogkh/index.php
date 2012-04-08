@@ -5,6 +5,8 @@ defined('_JEXEC') or die;
 
 JHtml::_('behavior.framework', true);
 
+$t1 = $this->countModules('right-weather');
+
 $showRightColumn = ($this->countModules('right-weather') or $this->countModules('right-pull'));
 ?>
 <!DOCTYPE html>
@@ -57,28 +59,7 @@ $showRightColumn = ($this->countModules('right-weather') or $this->countModules(
                 </aside><!-- #sideLeft -->
                 <?php if($showRightColumn) : ?>
                 <aside id="sideRight">
-                    <div class="module weather">
-                        <h3>Погода</h3>
-                        <div class="content">
-                            <h5>09.03.2012</h5>	
-                            <p>
-                                <span class="left">Утро</span>
-                                <span class="right">-11..-9°C</span>
-                            </p>
-                            <p>
-                                <span class="left">День</span>
-                                <span class="right">-11..-9°C</span>
-                            </p>
-                            <p>
-                                <span class="left">Вечер</span>
-                                <span class="right">-11..-9°C</span>
-                            </p>
-                            <p>
-                                <span class="left">Ночь</span>
-                                <span class="right">-11..-9°C</span>
-                            </p>
-                        </div>
-                    </div>
+                    <jdoc:include type="modules" name="right-weather" />
                     <div class="module pull">
                         <h3>Голосование</h3>
                         <div class="content">
