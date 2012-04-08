@@ -1,7 +1,7 @@
 <?php
 // config.sef.php : configuration file for sh404SEF for Joomla 1.5.x
 // 3.4.5.1255
-// saved at: 2012-03-22 23:11:14
+// saved at: 2012-03-24 00:47:54
 // by: admin (id: 42 )
 // domain: http://berezinogkh
 
@@ -24,14 +24,14 @@ $page404 = 0;
 $predefined = array();
 $skip = array();
 $nocache = array();
-$shDoNotOverrideOwnSef = array();
+$shDoNotOverrideOwnSef = array("feedback","newsfeeds","phocagallery");
 $shLog404Errors = '1';
 $shUseURLCache = '0';
 $shMaxURLInCache = '10000';
-$shTranslateURL = '1';
+$shTranslateURL = '0';
 $shInsertLanguageCode = '0';
 $notTranslateURLList = array();
-$notInsertIsoCodeList = array();
+$notInsertIsoCodeList = array("newsfeeds","phocagallery");
 $shInsertGlobalItemidIfNone = '0';
 $shInsertTitleIfNoItemid = '0';
 $shAlwaysInsertMenuTitle = '0';
@@ -50,7 +50,7 @@ $shInsertCategoryId = '0';
 $shInsertNumericalId = '0';
 $shInsertNumericalIdCatList = array("");
 $shRedirectNonSefToSef = '1';
-$shRedirectJoomlaSefToSef = false;
+$shRedirectJoomlaSefToSef = '0';
 $shConfig_live_secure_site = '';
 $shActivateIJoomlaMagInContent = true;
 $shInsertIJoomlaMagIssueId = false;
@@ -141,7 +141,7 @@ $shSecAntiFloodCount = 10;
 $shLangTranslateList = array("en-GB"=>"0");
 $shLangInsertCodeList = array("en-GB"=>"0");
 $defaultComponentStringList = array("banners"=>"","contact"=>"","content"=>"","feedback"=>"","finder"=>"","login"=>"","mailto"=>"","newsfeeds"=>"","phocagallery"=>"","search"=>"","weblinks"=>"","wrapper"=>"");
-$pageTexts = array("en-GB"=>"Page-%s");
+$pageTexts = array("en-GB"=>"Page-%s","ru-RU"=>"");
 $shAdminInterfaceType = 1;
 $shInsertNoFollowPDFPrint = true;
 $shInsertReadMorePageTitle = false;
@@ -167,7 +167,7 @@ $shInsertSMFBoardId = true;
 $shInsertSMFTopicId = true;
 $shinsertSMFUserName = false;
 $shInsertSMFUserId = true;
-$appendToPageTitle = '';
+$appendToPageTitle = ' / Березинское ЖКХ';
 $prependToPageTitle = '';
 $debugToLogFile = '0';
 $debugStartedAt = 0;
@@ -176,7 +176,7 @@ $shInsertOutboundLinksImage = '0';
 $shImageForOutboundLinks = 'external-black.png';
 $useCatAlias = '0';
 $useSecAlias = false;
-$useMenuAlias = '1';
+$useMenuAlias = '0';
 $alwaysAppendItemsPerPage = '0';
 $redirectToCorrectCaseUrl = '1';
 $jclInsertEventId = false;
@@ -243,10 +243,10 @@ $canReadRemoteConfig = '0';
 $stopCreatingShurls = '0';
 $shurlBlackList = '';
 $shurlNonSefBlackList = '';
-$includeContentCat = '0';
-$includeContentCatCategories = '4';
+$includeContentCat = '5';
+$includeContentCatCategories = '1';
 $contentCategoriesSuffix = 'all';
-$contentTitleIncludeCat = '2';
+$contentTitleIncludeCat = '5';
 $useContactCatAlias = '0';
 $contactCategoriesSuffix = 'all';
 $includeContactCat = '5';
@@ -257,7 +257,7 @@ $includeWeblinksCat = '2';
 $includeWeblinksCatCategories = '2';
 $liveSites = array("en-GB"=>"");
 $alternateTemplate = '';
-$useJoomlaRouter = array();
+$useJoomlaRouter = array("feedback","phocagallery");
 $slugForUncategorizedContent = '0';
 $slugForUncategorizedContact = '0';
 $slugForUncategorizedWeblinks = '0';

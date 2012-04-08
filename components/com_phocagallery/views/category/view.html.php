@@ -258,13 +258,7 @@ class PhocaGalleryViewCategory extends JView
 		}
 		// = = = = = = = = = = 
 		
-		$this->tmpl['pnd'] = '<div style="text-align: center; color: rgb(211, 211, 211);">Powe'
-				. 'red by <a href="http://www.ph'
-				. 'oca.cz" style="text-decoration: none;" target="_blank" title="Phoc'
-				. 'a.cz">Phoca</a> <a href="http://www.phoca.cz/phocaga'
-				. 'llery" style="text-decoration: none;" target="_blank" title="Phoca Gal'
-				. 'lery">Gall'
-				. 'ery</a></div>';
+		$this->tmpl['pnd'] = '';
 		
 		// Default_Categories
 		$catImg = PhocaGalleryImageFront::getCategoriesImageBackground($image_categories_size_cv, $small_image_width_cv, $small_image_height_cv,  $medium_image_height_cv, $medium_image_width_cv);
